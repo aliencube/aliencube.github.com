@@ -1,10 +1,73 @@
 <!doctype html>
-<html>
-	<head>
-		<title>aliencube.github.com</title>
-		<meta charset="utf-8" />
-	</head>
-	<body>
-		<h1>aliencube on <a href="http://github.com">GitHub</a></h1>
-	</body>
+<html ng-app="aliencubeApp">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+    <title>Simple Mock Web Service</title>
+
+    <meta name="description" content="" />
+    <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1.0, maximum-scale=1" />
+
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/bootstrap/bootstrap-theme.min.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/style.css" />
+
+    <script src="scripts/modernizr-2.6.2.min.js"></script>
+</head>
+<body>
+    <!--[if lte IE 8]>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+                </div>
+            </div>
+        </div>
+    <![endif]-->
+
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="jumbotron">
+                    <h1>Aliencube Community</h1>
+
+                    <p class="lead">This introduces all GitHub repositories that Aliencube Community directly manages or supports</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row" ng-controller="repositoryController">
+            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4" ng-repeat="repository in repositories | orderBy:['-pushed_at', 'name']">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h1 class="panel-title"><a href="{{repository.homepage | homepage : repository.homepage : repository.html_url}}">{{repository.name}}</a></h1>
+                    </div>
+                    <div class="panel-body">
+                        <p>{{repository.description}}</p>
+                    </div>
+                    <div class="panel-footer">
+                        <p>Last Commit on {{repository.pushed_at | date:'yyyy-MM-dd'}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <footer class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-right">
+                <p>This project is maintained by <a href="https://github.com/aliencube">aliencube.org</a></p>
+            </footer>
+        </div>
+    </div>
+
+    <script src="scripts/jquery-1.10.2.min.js"></script>
+    <script src="scripts/bootstrap/bootstrap.min.js"></script>
+    <script src="scripts/angularjs/angular.min.js"></script>
+    <script src="scripts/plugins.js"></script>
+    <script src="scripts/services.js"></script>
+    <script src="scripts/controllers.js"></script>
+    <script src="scripts/main.js"></script>
+</body>
 </html>
