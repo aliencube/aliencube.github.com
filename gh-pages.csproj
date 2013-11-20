@@ -58,14 +58,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="CNAME" />
-    <Content Include="css\bootstrap\bootstrap-theme.css" />
-    <Content Include="css\bootstrap\bootstrap-theme.min.css" />
-    <Content Include="css\bootstrap\bootstrap.css" />
-    <Content Include="css\bootstrap\bootstrap.min.css" />
+    <Content Include="css\bootstrap-theme.css" />
+    <Content Include="css\bootstrap-theme.min.css" />
+    <Content Include="css\bootstrap.css" />
+    <Content Include="css\bootstrap.min.css" />
     <Content Include="css\main.css" />
     <Content Include="css\pygment_trac.css" />
     <Content Include="css\style.css" />
     <Content Include="css\styles.css" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <None Include="images\ignore.me" />
     <Content Include="index.html" />
     <Content Include="scripts\angularjs\angular-bootstrap-prettify.js" />
@@ -84,8 +88,8 @@
     <Content Include="scripts\angularjs\angular-scenario.js" />
     <Content Include="scripts\angularjs\angular.js" />
     <Content Include="scripts\angularjs\angular.min.js" />
-    <Content Include="scripts\bootstrap\bootstrap.js" />
-    <Content Include="scripts\bootstrap\bootstrap.min.js" />
+    <Content Include="scripts\bootstrap.js" />
+    <Content Include="scripts\bootstrap.min.js" />
     <Content Include="scripts\angularjs\i18n\angular-locale_af-na.js" />
     <Content Include="scripts\angularjs\i18n\angular-locale_af-za.js" />
     <Content Include="scripts\angularjs\i18n\angular-locale_af.js" />
