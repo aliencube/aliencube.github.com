@@ -39,9 +39,9 @@
         
         <div class="row" ng-controller="repositoryController">
             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4" ng-repeat="repository in repositories | orderBy:['-pushed_at', 'name']">
-                <div class="panel panel-primary">
+                <div class="panel panel-{{repository.fork | fork : 'info' : 'primary'}}">
                     <div class="panel-heading">
-                        <h1 class="panel-title"><a href="{{repository.homepage | homepage : repository.homepage : repository.html_url}}">{{repository.name}}</a></h1>
+                        <h1 class="panel-title"><a href="{{repository.homepage | homepage : repository.homepage : repository.html_url}}">{{repository.name}}</a> <span class="label label-info">{{repository.fork | fork : 'forked' : ''}}</span></h1>
                     </div>
                     <div class="panel-body">
                         <p>{{repository.description}}</p>
@@ -49,8 +49,7 @@
                     <div class="panel-footer">
                         <p class="text-right">
                             <span class="glyphicon glyphicon-ok"> {{repository.pushed_at | date:'yyyy-MM-dd'}}&nbsp;</span>
-							<span class="glyphicon glyphicon-eye-open"> {{repository.watchers_count}}&nbsp;</span>
-							<span class="glyphicon glyphicon-star"> {{repository.stargazers_count}}</span>
+                            <span class="glyphicon glyphicon-star"> {{repository.stargazers_count}}</span>
                         </p>
                     </div>
                 </div>

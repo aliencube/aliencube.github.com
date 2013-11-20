@@ -1,6 +1,12 @@
 ﻿(function (angular) {
     var module = angular.module("aliencubeApp", []);
 
+    module.filter("fork", function () {
+        return function (condition, truevalue, falsevalue) {
+            return condition ? truevalue : falsevalue;
+        };
+    });
+
     module.filter("homepage", function () {
         return function (condition, truevalue, falsevalue) {
             return condition ? (truevalue.match(/^https?:\/\//gi) ? truevalue : "http://" + truevalue) : falsevalue;
